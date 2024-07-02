@@ -1,8 +1,8 @@
 import React from "react";
 import HomeScreen from "../screens/HomeScreen";
-import searchScreen from "../screens/SearchScreen";
-import ticketScreen from "../screens/TicketScreen";
-import userAccountScreen from "../screens/UserAccountScreen";
+import SearchScreen from "../screens/SearchScreen";
+import TicketScreen from "../screens/TicketScreen";
+import UserAccountScreen from "../screens/UserAccountScreen";
 import { COLORS, FONTSIZE, SPACING } from "../theme/theme";
 import CustomIcon from "../components/CustomIcon";
 import { View, StyleSheet } from "react-native";
@@ -13,10 +13,10 @@ const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
     return <Tab.Navigator>
-        <Tab.Screen name="Home" component={homeScreen}/>
-        <Tab.Screen name="Search" component={searchScreen}/>
-        <Tab.Screen name="Ticket" component={ticketScreen}/>
-        <Tab.Screen name="User" component={userAccountScreen}/>
+        <Tab.Screen name="Home" component={HomeScreen}/>
+        <Tab.Screen name="Search" component={SearchScreen}/>
+        <Tab.Screen name="Ticket" component={TicketScreen}/>
+        <Tab.Screen name="User" component={UserAccountScreen}/>
     </Tab.Navigator>;
 };
 

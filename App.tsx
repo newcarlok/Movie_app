@@ -1,21 +1,33 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TabNavigator from './src/screens/';
+import TabNavigator from './src/navigators/TabNavigator';
 import MovieDetailsScreen from './src/screens/MovieDetailsScreen';
 import SeatBookingScreen from './src/screens/SeatBookingScreen';
 import { StyleSheet } from 'react-native';
 import HomeScreen from './src/screens/HomeScreen';
 
-const stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <stack.Navigator screenOptions={{headerShown:false}}>
-        <stack.Screen name="Tab" component={TabNavigator} />
-        <stack.Screen name="Suck" component={MovieDetailsScreen} />
-        <stack.Screen name="seatBooking" component={SeatBookingScreen} />
-      </stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Screen 
+        name="Tab" 
+        component={TabNavigator}
+        options={{animation: 'default'}}
+        />
+        <Stack.Screen
+        name="MovieDetails" 
+        component={MovieDetailsScreen}
+        options={{animation: 'fade'}}
+        />
+        <Stack.Screen 
+        name="seatBooking" 
+        component={SeatBookingScreen}
+        options={{animation:'slide_from_right'}}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
